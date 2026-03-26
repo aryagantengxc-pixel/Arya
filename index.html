@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booyah Terakhir Kita</title>
+    <style>
+        body { margin: 0; padding: 0; background: #0f0c29; color: #fff; font-family: sans-serif; overflow-x: hidden; text-align: center; }
+        
+        /* Background Gradasi Mewah */
+        .bg { background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); min-height: 100vh; width: 100%; position: relative; }
+
+        /* Partikel Melayang (Biar Gak Simple) */
+        .particle { position: absolute; background: rgba(255,255,255,0.2); border-radius: 50%; animation: fly 10s infinite linear; }
+        @keyframes fly { from { transform: translateY(100vh); } to { transform: translateY(-10vh); } }
+
+        .section { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; position: relative; z-index: 10; }
+        
+        /* Animasi Muncul */
+        .fade { opacity: 0; transform: scale(0.9); transition: 1.5s all ease; }
+        .show { opacity: 1; transform: scale(1); }
+
+        h1 { font-size: 30px; text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080; color: #fff; }
+        p { font-size: 16px; line-height: 1.8; color: #ddd; max-width: 300px; margin: 0 auto; }
+        
+        .box { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(5px); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        
+        .ff-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        .highlight { color: #ff0080; font-weight: bold; text-shadow: 0 0 5px #ff0080; }
+    </style>
+</head>
+<body>
+
+    <div class="bg">
+        <div class="particle" style="width:5px; height:5px; left:10%; animation-duration:8s;"></div>
+        <div class="particle" style="width:8px; height:8px; left:50%; animation-duration:12s;"></div>
+        <div class="particle" style="width:4px; height:4px; left:80%; animation-duration:15s;"></div>
+
+        <div class="section">
+            <div class="fade show">
+                <h1>Halo, <br>Partner Mabar...</h1>
+                <p>Scroll pelan-pelan ya, ada yang mau gue sampein.</p>
+                <div style="margin-top:20px; font-size:20px; opacity:0.5;">👇</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="fade" id="s2">
+                <div class="box">
+                    <span class="ff-icon">🎮</span>
+                    <p>Makasih ya udah mau nemenin gue di setiap match. <br> Makasih juga atas <span class="highlight">waktu main FF-nya</span> selama ini.</p>
+                    <p style="margin-top:15px; font-size:14px;">Dari zaman kita masih noob, sampe kita bisa Booyah bareng.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="fade" id="s3">
+                <div class="box">
+                    <h1>Maafin Gue...</h1>
+                    <p>Kalo selama mabar gue beban, sering mati duluan, atau malah bikin lu emosi.</p>
+                    <p>Tapi jujur, momen mabar bareng lu itu <span class="highlight">Zona Aman</span> buat gue.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="fade" id="s4">
+                <h1>Booyah Terakhir</h1>
+                <p>Mungkin setelah ini kita gak satu lobby lagi. Tapi kenangan mabar kita gak bakal kena <span class="highlight">Air Drop</span> atau hilang gitu aja.</p>
+                <br>
+                <p style="font-size: 14px; color: #ff85a2;">"Bahagia terus ya di real life. <br> Makasih buat segalanya."</p>
+                <div style="font-size:30px; margin-top:20px;">🕊️❤</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Deteksi Scroll
+        window.addEventListener('scroll', function() {
+            var fades = document.querySelectorAll('.fade');
+            for (var i = 0; i < fades.length; i++) {
+                var pos = fades[i].getBoundingClientRect().top;
+                if (pos < window.innerHeight - 150) {
+                    fades[i].classList.add('show');
+                }
+            }
+        });
+    </script>
+</body>
+  </html>
